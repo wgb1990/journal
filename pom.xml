@@ -1086,7 +1086,7 @@
 			<dependency>
 				<groupId>org.thymeleaf</groupId>
 				<artifactId>thymeleaf</artifactId>
-				<version>thymeleaf.version</version>
+				<version>${thymeleaf.version}</version>
 			</dependency>
 
 		</dependencies>
@@ -1445,4 +1445,4 @@
 		</repository>
 	</repositories>
 
-</project>
+    </project>
