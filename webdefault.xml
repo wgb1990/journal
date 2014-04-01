@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <!-- ===================================================================== -->
 <!-- This file contains the default descriptor for web applications.       -->
@@ -260,6 +260,14 @@
         <param-name>xpoweredBy</param-name>
         <param-value>false</param-value>
     </init-param>
+     <init-param>
+         <param-name>checkInteval</param-name>
+         <param-value>1</param-value>
+     </init-param>
+      <init-param>
+          <param-name>reloading</param-name>
+          <param-value>true</param-value>
+      </init-param>
     <!--  
     <init-param>
         <param-name>classpath</param-name>

@@ -8,12 +8,10 @@
 		overflowToDisk="true" maxEntriesLocalDisk="100000" />
 
 	<!-- Special objects setting. -->
-	<cache name="org.springside.examples.showcase.entity.User" maxEntriesLocalHeap="1000" eternal="true"
+	<cache name="com.oakhole.auth.entity.User" maxEntriesLocalHeap="1000" eternal="true"
 		overflowToDisk="true" maxEntriesLocalDisk="10000" />
-	<cache name="org.springside.examples.showcase.entity.User.roleList" maxEntriesLocalHeap="1000" eternal="true"
-		overflowToDisk="true" maxEntriesLocalDisk="10000" />
-	<cache name="org.springside.examples.showcase.entity.Team" maxEntriesLocalHeap="100" eternal="true"
-		overflowToDisk="true" maxEntriesLocalDisk="1000" />
-	<cache name="org.springside.examples.showcase.entity.Role" maxEntriesLocalHeap="100"
-		eternal="true" overflowToDisk="true" maxEntriesLocalDisk="1000" />
+    <cache name="com.oakhole.auth.entity.Role" maxEntriesLocalHeap="1000" eternal="true"
+           overflowToDisk="true" maxEntriesLocalDisk="10000" />
+    <cache name="com.oakhole.auth.entity.User.roleList" maxEntriesLocalHeap="1000" eternal="true"
+           overflowToDisk="true" maxEntriesLocalDisk="10000" />
 </ehcache>

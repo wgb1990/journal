@@ -12,8 +12,8 @@
 	</bean>
 
 	<!-- 項目自定义的Realm -->
-	<bean id="shiroDbRealm" class="org.springside.examples.showcase.service.ShiroDbRealm">
-		<property name="accountService" ref="accountService"/>
+	<bean id="shiroDbRealm" class="com.oakhole.auth.service.ShiroDbRealm">
+		<property name="userService" ref="userService"/>
 	</bean>
 	
 	<!-- Shiro Filter -->
@@ -25,8 +25,12 @@
 			<value>
 				/login = authc
 				/logout = logout
-				/account/** = user
-				/api/secure/** = authcBasic
+                /static/** = anon
+                /assets/** = anon
+                /register/** = anon
+                /javasimon/** = roles[Admin]
+				/api/** = authcBasic
+                /** = user
 			</value>
 		</property>
 	</bean>

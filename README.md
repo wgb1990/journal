@@ -1,4 +1,0 @@
-journal
-=======
-
-journal
