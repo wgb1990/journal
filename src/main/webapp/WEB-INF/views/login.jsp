@@ -4,49 +4,87 @@
 <%@ page import="org.apache.shiro.authc.IncorrectCredentialsException"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
-<html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>登录页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Login</title>
+    <link type="image/x-icon" href="${ctx}/static/images/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="${ctx}/static/css/reset.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="${ctx}/static/css/style.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="${ctx}/static/css/invalid.css" type="text/css" media="screen"/>
+    <link href="${ctx}/static/jquery-validation/1.11.1/validate.css" type="text/css" rel="stylesheet" />
+
+    <script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="${ctx}/static/jquery-validation/1.11.1/messages_bs_zh.js" type="text/javascript"></script>
+    <script type="text/javascript" src="${ctx}/static/scripts/simpla.jquery.configuration.js"></script>
+    <script type="text/javascript" src="${ctx}/static/scripts/facebox.js"></script>
+    <script type="text/javascript" src="${ctx}/static/scripts/jquery.wysiwyg.js"></script>
 </head>
 
-<body>
-	<form id="loginForm" action="${ctx}/login" method="post" class="form-horizontal">
-        <%
-        	String error = (String) request.getAttribute(FormAuthenticationFilter.DEFAULT_ERROR_KEY_ATTRIBUTE_NAME);
-        	if(error != null){
-        	%>
-        		<div class="alert alert-error input-medium controls">
-        			<button class="close" data-dismiss="alert">×</button>登录失败，请重试.
-        		</div>
-        	<%
-        	}
-        %>
-		<div class="control-group">
-			<label for="username" class="control-label">名称:</label>
-			<div class="controls">
-				<input type="text" id="username" name="username"  value="${username}" class="input-medium required"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label for="password" class="control-label">密码:</label>
-			<div class="controls">
-				<input type="password" id="password" name="password" class="input-medium required"/>
-			</div>
-		</div>
-				
-		<div class="control-group">
-			<div class="controls">
-				<label class="checkbox" for="rememberMe"><input type="checkbox" id="rememberMe" name="rememberMe"/> 记住我</label>
-				<input id="submit_btn" class="btn btn-primary" type="submit" value="登录"/> <a class="btn" href="${ctx}/register">注册</a>
-			 	<span class="help-block">(管理员: <b>admin/admin</b>, 普通用户: <b>user/user</b>)</span>
-			</div>
-		</div>
-	</form>
+<body id="login">
 
-	<script>
+<div id="login-wrapper" class="png_bg">
+    <div id="login-top">
+
+        <h1>Simpla Admin</h1>
+        <!-- Logo (221px width) -->
+        <img id="logo" src="${ctx}/static/images/logo.png" alt="Simpla Admin logo"/>
+    </div>
+    <!-- End #logn-top -->
+
+    <div id="login-content">
+
+        <form id="loginForm" action="${ctx}/login" method="post">
+
+            <%
+            String error = (String) request.getAttribute(FormAuthenticationFilter.DEFAULT_ERROR_KEY_ATTRIBUTE_NAME);
+            if(error != null){
+            %>
+            <div class="notification error png_bg">
+                <div>
+                    Incorrect username or password .
+                </div>
+            </div>
+            <%
+            }
+            %>
+            <p>
+                <label>Username</label>
+                <input name="username" class="text-input input-medium required" type="text" value="${username}"/>
+            </p>
+
+            <div class="clear"></div>
+            <p>
+                <label>Password</label>
+                <input name="password" class="text-input input-medium required" type="password"/>
+            </p>
+
+            <div class="clear"></div>
+            <p id="remember-password">
+                <input name="rememberMe" type="checkbox"/>Remember me
+            </p>
+
+            <div class="clear"></div>
+            <p>
+                <input class="button" type="submit" value="Sign In"/>
+            </p>
+
+        </form>
+    </div>
+    <!-- End #login-content -->
+
+</div>
+<!-- End #login-wrapper -->
+
+<!-- script -->
+<script>
 		$(document).ready(function() {
 			$("#loginForm").validate();
 		});
-	</script>
+</script>
+
 </body>
+
 </html>

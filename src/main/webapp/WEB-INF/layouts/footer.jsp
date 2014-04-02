@@ -1,14 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
-	<!-- BEGIN FOOTER -->
-	<div class="footer">
-		<div class="footer-inner">
-			2013 &copy; Metronic by keenthemes.
-		</div>
-		<div class="footer-tools">
-			<span class="go-top">
-			<i class="fa fa-angle-up"></i>
-			</span>
-		</div>
-	</div>
-	<!-- END FOOTER -->
+<div id="footer">
+	<small>
+		&#169; Copyright 2014 Oakhole | Powered by <a href="http://oakhole.com">Oakhole</a> | <a href="#">Top</a>
+	</small>
+</div>
 
