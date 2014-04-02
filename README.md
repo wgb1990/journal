@@ -1,5 +1,9 @@
-journal
+Journal
+
 =======
+
+**Why named journal ?**
+
 
 Integration some framework init , such as springside's & lemon's .
 
